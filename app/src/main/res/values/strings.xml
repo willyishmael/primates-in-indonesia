@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Primates in Indonesia</string>
+    <string name="primates_name">Primates name</string>
+    <string name="detail">Detail</string>
 </resources>
