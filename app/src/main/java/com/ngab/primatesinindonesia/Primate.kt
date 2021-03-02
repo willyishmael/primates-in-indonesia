@@ -1,6 +1,6 @@
 package com.ngab.primatesinindonesia
 
-class Primates {
+class Primate {
     var name = ""
     var latinName = ""
     var detail = ""
