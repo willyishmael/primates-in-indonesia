@@ -8,9 +8,23 @@ object PrimatesData {
             "Monyet Ekor Panjang",
             "Owa Lengan Putih",
             "Siamang",
+            "Simpai",
             "Surili",
             "Tarsius Bangka",
             "Tarsius Siau"
+    )
+
+    private val latinNames = arrayOf(
+            "Macaca pagensis",
+            "Nycticebus javanicus",
+            "Presbytis thomasi",
+            "Macaca fascicularis",
+            "Hylobates lar",
+            "Symphalangus syndactylus",
+            "Presbytis comata",
+            "Presbytis melalophos",
+            "Tarsius bancanus",
+            "Tarsius tumpara"
     )
 
     private val primateImages = intArrayOf(
@@ -48,6 +62,8 @@ object PrimatesData {
                     "Umumnya warna tubuh Surili dewasa mulai dari kepala sampai bagian punggung hitam atau coklat dan keabuan, sedangkan warna rambut jambul dan kepala berwarna hitam. " +
                     "Rambut yang tumbuh di bawah dagu, dada dan perut, bagian dalam lengan kaki dan ekor, berwarna putih. Warna kulit muka dan telinga hitam pekat agak kemerahan. " +
                     "Anak yang baru lahir berwarna putih dan memiliki garis hitam mulai dari kepala hingga bagian ekor.",
+            "Simpai (Presbytis melalophos) adalah spesies primata di family Cercopithecidae. Hewan ini merupakan satwa endemik di pulau Sumatra, Indonesia. Habitat alaminya adalah hutan tropis kering atau subtropis. " +
+                    "Hewan ini terancam punah akibat hilangnya habitat",
             "Tarsius bancanus atau mentilin merupakan salah satu spesies tarsius. Primata endemik Sumatra dan Kalimantan, Indonesia ini ditetapkan sebagai fauna identitas provinsi Bangka Belitung." +
                     "Tarsius bancanus dalam bahasa Inggris sering disebut sebagai Horsfield’s Tarsier atau Western Tarsier. " +
                     "Tarsius bancanus tersebar di Indonesia (Kalimantan, Sumatra, dan pulau-pulau sekitar seperti Bangka, Belitung, dan Karimata), Malaysia Timur (Sabah dan Serawak), dan Brunei Darussalam.",
@@ -55,5 +71,18 @@ object PrimatesData {
                     "Tarsius tumpara disebut sebagai satu di antara 25 spesies primata paling terancam punah oleh IUCN Species Survival Commission Primate Specialist Group. Ancaman utama untuk primata ini adalah persebarannya yang hanya terbatas pada satu pulau kecil vulkanik yaitu Pulau Siau, " +
                     "populasi manusia yang terus bertambah, dan juga perburuan."
     )
+
+    val listData: ArrayList<Primate> get() {
+        val list = arrayListOf<Primate>()
+        for (position in primateNames.indices) {
+            val primate = Primate()
+            primate.name = primateNames[position]
+            primate.latinName = latinNames[position]
+            primate.photo = primateImages[position]
+            primate.detail = primateDetails[position]
+            list.add(primate)
+        }
+        return list
+    }
 }
 
