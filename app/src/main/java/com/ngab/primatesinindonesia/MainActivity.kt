@@ -2,12 +2,14 @@ package com.ngab.primatesinindonesia
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ngab.primatesinindonesia.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private var list: ArrayList<Primate> = arrayListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -15,5 +17,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.rvPrimates.setHasFixedSize(true)
+
+        list.addAll(PrimatesData.listData)
+        showRecyclerList()
+    }
+
+    private fun showRecyclerList() {
+        binding.rvPrimates.layoutManager = LinearLayoutManager(this)
+        val listPrimateAdapter = ListPrimateAdapter(list)
+        binding.rvPrimates.adapter = listPrimateAdapter
     }
 }
