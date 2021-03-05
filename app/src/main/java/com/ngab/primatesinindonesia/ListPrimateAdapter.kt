@@ -1,10 +1,13 @@
 package com.ngab.primatesinindonesia
 
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 
 class ListPrimateAdapter(private val listPrimate: ArrayList<Primate>) : RecyclerView.Adapter<ListPrimateAdapter.ListViewHolder>() {
     class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -14,14 +17,23 @@ class ListPrimateAdapter(private val listPrimate: ArrayList<Primate>) : Recycler
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
-        TODO("Not yet implemented")
+        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_row_primates, parent, false)
+        return ListViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        val primate = listPrimate[position]
+
+        Glide.with(holder.itemView.context)
+                .load(primate.photo)
+                .apply(RequestOptions().override(55,55))
+                .into(holder.imgPhoto)
+
+        holder.tvName.text = primate.name
+        holder.tvDetail.text = primate.detail
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return listPrimate.size
     }
 }
