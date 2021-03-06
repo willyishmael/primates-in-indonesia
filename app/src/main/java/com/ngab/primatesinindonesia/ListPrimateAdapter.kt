@@ -8,8 +8,16 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import javax.security.auth.callback.Callback
 
 class ListPrimateAdapter(private val listPrimate: ArrayList<Primate>) : RecyclerView.Adapter<ListPrimateAdapter.ListViewHolder>() {
+
+    private lateinit var onItemClickCallback: OnItemClickCallback
+
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback
+    }
+
     class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var tvName: TextView = itemView.findViewById(R.id.tv_item_name)
         var tvDetail: TextView = itemView.findViewById(R.id.tv_item_detail)
@@ -31,9 +39,16 @@ class ListPrimateAdapter(private val listPrimate: ArrayList<Primate>) : Recycler
 
         holder.tvName.text = primate.name
         holder.tvDetail.text = primate.detail
+        holder.itemView.setOnClickListener {
+            onItemClickCallback.onItemClicked(listPrimate[holder.adapterPosition])
+        }
     }
 
     override fun getItemCount(): Int {
         return listPrimate.size
+    }
+
+    interface OnItemClickCallback {
+        fun onItemClicked(data: Primate)
     }
 }
