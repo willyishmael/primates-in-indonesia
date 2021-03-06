@@ -20,6 +20,9 @@ class ItemDetailActivity : AppCompatActivity() {
         val primatePosition = intent.getIntExtra(EXTRA_ITEM_POSITION, 0)
         val primate : Primate = PrimatesData.listData[primatePosition]
 
-
+        binding.imgPrimateBig.setImageResource(primate.photo)
+        binding.tvPrimateName.text = primate.name
+        binding.tvPrimateLatinName.text = primate.latinName
+        binding.tvPrimateDescription.text = primate.detail
     }
 }
