@@ -40,7 +40,7 @@ class ListPrimateAdapter(private val listPrimate: ArrayList<Primate>) : Recycler
         holder.tvName.text = primate.name
         holder.tvDetail.text = primate.detail
         holder.itemView.setOnClickListener {
-            onItemClickCallback.onItemClicked(listPrimate[holder.adapterPosition])
+            onItemClickCallback.onItemClicked(holder.adapterPosition)
         }
     }
 
@@ -49,6 +49,6 @@ class ListPrimateAdapter(private val listPrimate: ArrayList<Primate>) : Recycler
     }
 
     interface OnItemClickCallback {
-        fun onItemClicked(data: Primate)
+        fun onItemClicked(position: Int)
     }
 }
