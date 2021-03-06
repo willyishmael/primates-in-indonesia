@@ -1,8 +1,8 @@
 package com.ngab.primatesinindonesia
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ngab.primatesinindonesia.databinding.ActivityMainBinding
 
@@ -22,8 +22,10 @@ class MainActivity : AppCompatActivity() {
         showRecyclerList()
     }
 
-    private fun moveToItemDetailActivity(data: Primate){
-        Toast.makeText(this, data.name, Toast.LENGTH_SHORT).show()
+    private fun moveToItemDetailActivity(position: Int){
+        val moveIntent = Intent(this@MainActivity, ItemDetailActivity::class.java)
+        moveIntent.putExtra(ItemDetailActivity.EXTRA_ITEM_POSITION, position)
+        startActivity(moveIntent)
     }
 
     private fun showRecyclerList() {
@@ -32,8 +34,8 @@ class MainActivity : AppCompatActivity() {
         binding.rvPrimates.adapter = listPrimateAdapter
 
         listPrimateAdapter.setOnItemClickCallback(object : ListPrimateAdapter.OnItemClickCallback {
-            override fun onItemClicked(data: Primate) {
-                moveToItemDetailActivity(data)
+            override fun onItemClicked(position: Int) {
+                moveToItemDetailActivity(position)
             }
         })
     }
