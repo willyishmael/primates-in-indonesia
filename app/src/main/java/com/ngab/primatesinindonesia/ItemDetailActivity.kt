@@ -17,6 +17,9 @@ class ItemDetailActivity : AppCompatActivity() {
         binding = ActivityItemDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val primate = intent.getIntExtra(EXTRA_ITEM_POSITION, 0)
+        val primatePosition = intent.getIntExtra(EXTRA_ITEM_POSITION, 0)
+        val primate : Primate = PrimatesData.listData[primatePosition]
+
+
     }
 }
