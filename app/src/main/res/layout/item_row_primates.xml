@@ -24,7 +24,7 @@
             android:id="@+id/tv_item_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="4dp"
             android:textSize="16sp"
             android:textStyle="bold"
             tools:text="@string/primates_name" />
