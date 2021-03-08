@@ -22,7 +22,7 @@ class ItemDetailActivity : AppCompatActivity() {
 
         binding.imgPrimateBig.setImageResource(primate.photo)
         binding.tvPrimateName.text = primate.name
-        binding.tvPrimateLatinName.text = primate.latinName
+        binding.tvPrimateLatinName.text = "[" + primate.latinName + "]"
         binding.tvPrimateDescription.text = primate.detail
     }
 }

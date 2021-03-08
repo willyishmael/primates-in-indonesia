@@ -11,21 +11,21 @@
         android:id="@+id/img_primate_big"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="40"
-        android:scaleType="centerCrop"
+        android:layout_weight="50"
         android:contentDescription="@string/dummy_text"
-        tools:src="@drawable/siamang"/>
+        android:scaleType="centerCrop"
+        tools:src="@drawable/siamang" />
 
     <TextView
         android:id="@+id/tv_primate_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:textSize="24sp"
         android:textStyle="bold"
-        tools:text="@string/dummy_text"/>
+        tools:text="@string/dummy_text" />
 
     <TextView
         android:id="@+id/tv_primate_latin_name"
@@ -34,8 +34,9 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
+        android:textSize="16sp"
         android:textStyle="italic"
-        tools:text="@string/dummy_text"/>
+        tools:text="@string/dummy_text" />
 
     <TextView
         android:id="@+id/tv_primate_description"
@@ -43,7 +44,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        tools:text="@string/dummy_text"/>
+        android:textSize="16sp"
+        tools:text="@string/dummy_text" />
 
 
 </LinearLayout>
