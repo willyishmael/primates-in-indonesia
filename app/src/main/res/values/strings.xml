@@ -3,4 +3,6 @@
     <string name="primates_name">Primates name</string>
     <string name="detail">Detail</string>
     <string name="dummy_text">dummy text</string>
+    <string name="action_profile">Action Profile</string>
+    <string name="action_settings">Action Settings</string>
 </resources>

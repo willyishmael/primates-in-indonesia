@@ -3,6 +3,8 @@ package com.ngab.primatesinindonesia
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ngab.primatesinindonesia.databinding.ActivityMainBinding
 
@@ -38,6 +40,25 @@ class MainActivity : AppCompatActivity() {
                 moveToItemDetailActivity(position)
             }
         })
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.profile, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    fun onOptionItemSelected(item: MenuItem): Boolean {
+        selectAction(item.itemId)
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun selectAction(selectedAction: Int) = when (selectedAction){
+        R.id.action_profile -> {
+
+        }
+        else -> {
+            //do nothing
+        }
     }
 
 }
