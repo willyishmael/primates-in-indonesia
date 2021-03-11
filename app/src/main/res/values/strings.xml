@@ -6,5 +6,5 @@
     <string name="action_profile">Action Profile</string>
     <string name="action_settings">Action Settings</string>
     <string name="credit">Credit:</string>
-    <string name="credit_description">Logo vector created by pikisuperstar - www.freepik.com</string>
+    <string name="credit_description">Logo vector created by pikisuperstar <br></br> www.freepik.com</string>
 </resources>
