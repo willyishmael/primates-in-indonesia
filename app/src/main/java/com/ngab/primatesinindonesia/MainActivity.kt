@@ -47,18 +47,17 @@ class MainActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
-    fun onOptionItemSelected(item: MenuItem): Boolean {
-        selectAction(item.itemId)
-        return super.onOptionsItemSelected(item)
-    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle item selection
+        return when (item.itemId) {
+            R.id.action_profile -> {
 
-    private fun selectAction(selectedAction: Int) = when (selectedAction){
-        R.id.action_profile -> {
-
-        }
-        else -> {
-            //do nothing
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
+
+
 
 }
