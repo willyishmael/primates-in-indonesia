@@ -51,13 +51,16 @@ class MainActivity : AppCompatActivity() {
         // Handle item selection
         return when (item.itemId) {
             R.id.action_profile -> {
-
+                moveToProfileActivity()
                 true
             }
             else -> super.onOptionsItemSelected(item)
         }
     }
 
-
+    private fun moveToProfileActivity() {
+        val moveIntent = Intent(this@MainActivity, ProfileActivity::class.java)
+        startActivity(moveIntent)
+    }
 
 }
