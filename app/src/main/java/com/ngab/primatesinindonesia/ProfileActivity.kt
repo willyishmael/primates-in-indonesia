@@ -13,5 +13,11 @@ class ProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val profile = ProfileData.listData[0]
+
+        binding.tvProfilePicture.setImageResource(profile.photo)
+        binding.tvProfileName.text = profile.name
+        binding.tvProfileEmail.text = profile.email
     }
 }
