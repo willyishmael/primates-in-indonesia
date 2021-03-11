@@ -41,7 +41,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="75dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -77,8 +77,18 @@
             android:layout_below="@id/tv_credit"
             android:layout_marginStart="8dp"
             android:layout_toEndOf="@+id/tv_profile_logo"
-            android:layout_alignParentBottom="true"
             android:text="@string/credit_description"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_credit_description_link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_credit_description"
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@+id/tv_profile_logo"
+            android:layout_alignParentBottom="true"
+            android:text="@string/credit_description_link"
             android:textSize="14sp" />
 
     </RelativeLayout>
