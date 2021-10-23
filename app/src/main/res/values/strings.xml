@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Primates in Indonesia</string>
+    <string name="primates_name">Primates name</string>
+    <string name="detail">Detail</string>
+    <string name="dummy_text">dummy text</string>
+    <string name="action_profile">Action Profile</string>
+    <string name="action_settings">Action Settings</string>
+    <string name="credit">Credit:</string>
+    <string name="credit_description">Logo vector created by pikisuperstar</string>
+    <string name="credit_description_link">www.freepik.com</string>
 </resources>
